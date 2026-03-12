@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Connect 4 & Guns</title>
+    <meta name="description" content="A Connect Four remix where each player gets a one-time-use gun to destroy a coin and cause a chain collapse!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container" id="gameContainer">
+        <header class="game-header">
+            <h1 class="game-title">
+                CONNECT 4
+                <span class="title-amp">&</span>
+                <span class="title-guns">GUNS</span>
+            </h1>
+        </header>
+
+        <div class="status-bar" id="statusBar">
+            <div class="status-dot" id="statusDot"></div>
+            <span class="status-text" id="statusText">Player 1's Turn</span>
+        </div>
+
+        <div class="board-wrapper" id="boardWrapper">
+            <div class="column-previews" id="columnPreviews"></div>
+            <div class="board" id="board"></div>
+        </div>
+
+        <div class="controls" id="controls">
+            <div class="player-panel" id="player1Panel">
+                <div class="player-label"><div class="player-dot p1"></div><span>Player 1</span></div>
+                <div class="gun-status" id="p1Gun"><span class="gun-emoji">🔫</span><span class="gun-label">Ready</span></div>
+            </div>
+            <div class="action-buttons">
+                <button class="btn gun-btn" id="gunBtn"><span class="btn-icon">🎯</span><span>USE GUN</span></button>
+                <button class="btn cancel-btn hidden" id="cancelBtn"><span class="btn-icon">✕</span><span>CANCEL</span></button>
+                <button class="btn new-btn" id="newBtn">NEW GAME</button>
+            </div>
+            <div class="player-panel" id="player2Panel">
+                <div class="player-label"><div class="player-dot p2"></div><span>Player 2</span></div>
+                <div class="gun-status" id="p2Gun"><span class="gun-emoji">🔫</span><span class="gun-label">Ready</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay hidden" id="overlay">
+        <div class="modal">
+            <div class="modal-icon" id="modalIcon">🏆</div>
+            <h2 class="modal-title" id="modalTitle">Player 1 Wins!</h2>
+            <p class="modal-sub" id="modalSub">Amazing victory!</p>
+            <button class="btn play-btn" id="playBtn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
